@@ -1,16 +1,14 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
+    private Result() {
+        /* This utility class should not be instantiated */
+    }
+
 
     /*
      * Complete the 'compareTriplets' function below.
@@ -22,13 +20,13 @@ class Result {
      */
 
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-        int alice_score = 0;
-        int bob_score = 0;
+        int aliceScore = 0;
+        int bobScore = 0;
         for(int index=0; index<3; index++){
-            alice_score += (a.get(index)>b.get(index))? 1 : 0;
-            bob_score += (b.get(index)>a.get(index))? 1 : 0;
+            aliceScore += (a.get(index)>b.get(index))? 1 : 0;
+            bobScore += (b.get(index)>a.get(index))? 1 : 0;
         }
-        return new ArrayList<Integer>(Arrays.asList(alice_score, bob_score));
+        return new ArrayList<Integer>(Arrays.asList(aliceScore, bobScore));
     }
 
 }
